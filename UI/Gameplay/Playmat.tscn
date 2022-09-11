@@ -1,0 +1,305 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://UI/Gameplay/CardSlot.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Textures/UI/Gameplay/GraveCompressed.png" type="Texture" id=2]
+[ext_resource path="res://Fonts/SilverGreaterCounter.tres" type="DynamicFont" id=3]
+[ext_resource path="res://UI/Gameplay/CardMover.tscn" type="PackedScene" id=4]
+[ext_resource path="res://UI/Gameplay/Playmat.gd" type="Script" id=5]
+[ext_resource path="res://UI/Gameplay/Deck.gd" type="Script" id=6]
+[ext_resource path="res://UI/Gameplay/Hand.gd" type="Script" id=7]
+[ext_resource path="res://UI/Gameplay/CardHighlighter.tscn" type="PackedScene" id=8]
+[ext_resource path="res://UI/Gameplay/Field.gd" type="Script" id=9]
+[ext_resource path="res://Textures/CardCompressed/CardBackCompressed.png" type="Texture" id=10]
+[ext_resource path="res://UI/Gameplay/Graveyard.gd" type="Script" id=12]
+[ext_resource path="res://Fonts/SilverLesserCounter.tres" type="DynamicFont" id=13]
+[ext_resource path="res://Textures/UI/Gameplay/EmptySlotCompressed.png" type="Texture" id=14]
+[ext_resource path="res://Textures/UI/Gameplay/TurnEndCompressed.png" type="Texture" id=15]
+[ext_resource path="res://Textures/UI/Gameplay/ConfirmSurrenderCompressed.png" type="Texture" id=16]
+[ext_resource path="res://Textures/UI/Gameplay/LifeShieldCompressed.png" type="Texture" id=17]
+[ext_resource path="res://Textures/UI/Gameplay/Main1Compressed.png" type="Texture" id=19]
+[ext_resource path="res://Textures/UI/Gameplay/WhiteFlagCompressed.png" type="Texture" id=20]
+[ext_resource path="res://Textures/UI/Gameplay/DeckCountBacklight.png" type="Texture" id=21]
+[ext_resource path="res://UI/Gameplay/LifeCounter.gd" type="Script" id=23]
+[ext_resource path="res://Textures/UI/Gameplay/LifeCountBacklight.png" type="Texture" id=24]
+[ext_resource path="res://Textures/UI/Gameplay/GoAttackCompressed.png" type="Texture" id=25]
+[ext_resource path="res://Textures/UI/Gameplay/EntaMain2Compressed.png" type="Texture" id=26]
+[ext_resource path="res://UI/Gameplay/Attachments_Fade_Timer.gd" type="Script" id=27]
+[ext_resource path="res://Animations/Animations.tscn" type="PackedScene" id=28]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+[sub_resource type="RectangleShape2D" id=3]
+
+[sub_resource type="RectangleShape2D" id=4]
+
+[sub_resource type="RectangleShape2D" id=5]
+
+[node name="Playmat" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Field" type="Control" parent="."]
+margin_top = -60.0
+margin_bottom = -60.0
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CardSlots" type="Control" parent="Field"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="CardSlot1" parent="Field/CardSlots" instance=ExtResource( 1 )]
+position = Vector2( -480, 0 )
+
+[node name="CardSlot2" parent="Field/CardSlots" instance=ExtResource( 1 )]
+position = Vector2( -240, 0 )
+
+[node name="CardSlot3" parent="Field/CardSlots" instance=ExtResource( 1 )]
+
+[node name="CardSlot4" parent="Field/CardSlots" instance=ExtResource( 1 )]
+position = Vector2( 240, 0 )
+
+[node name="CardSlot5" parent="Field/CardSlots" instance=ExtResource( 1 )]
+position = Vector2( 480, 0 )
+
+[node name="Tween" type="Tween" parent="Field"]
+
+[node name="UIButtons" type="Control" parent="Field"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PhaseButton" type="Control" parent="Field/UIButtons"]
+margin_top = -210.0
+margin_bottom = -210.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Main1" type="Sprite" parent="Field/UIButtons/PhaseButton"]
+modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 19 )
+
+[node name="Attack" type="Sprite" parent="Field/UIButtons/PhaseButton"]
+modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 25 )
+
+[node name="Main2" type="Sprite" parent="Field/UIButtons/PhaseButton"]
+modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 26 )
+
+[node name="End" type="Sprite" parent="Field/UIButtons/PhaseButton"]
+modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 15 )
+
+[node name="PhaseButton" type="TouchScreenButton" parent="Field/UIButtons/PhaseButton"]
+position = Vector2( -125, -50 )
+scale = Vector2( 12.5, 5 )
+shape = SubResource( 1 )
+
+[node name="ZoneTargetingWait" type="Timer" parent="Field"]
+wait_time = 0.2
+
+[node name="LifeCounter" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 890.0
+margin_top = 8.0
+margin_right = 890.0
+margin_bottom = 8.0
+script = ExtResource( 23 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackSprite" type="Sprite" parent="LifeCounter"]
+texture = ExtResource( 17 )
+
+[node name="BackLight" type="Sprite" parent="LifeCounter"]
+position = Vector2( 5, 2 )
+texture = ExtResource( 24 )
+
+[node name="TextBox" type="Control" parent="LifeCounter"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="LifeCount" type="Label" parent="LifeCounter/TextBox"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -65.0
+margin_top = -98.0
+margin_right = 31.0
+margin_bottom = 52.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 13 )
+align = 1
+
+[node name="CountFrame" type="Timer" parent="LifeCounter"]
+wait_time = 0.04
+
+[node name="Animations" parent="LifeCounter" instance=ExtResource( 28 )]
+
+[node name="WhiteFlag" type="Control" parent="."]
+margin_left = 900.0
+margin_top = 200.0
+margin_right = 900.0
+margin_bottom = 200.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WhiteFlag" type="TouchScreenButton" parent="WhiteFlag"]
+position = Vector2( -65, 0 )
+scale = Vector2( 5, 3.5 )
+shape = SubResource( 2 )
+
+[node name="FlagSprite" type="Sprite" parent="WhiteFlag"]
+position = Vector2( -15, 30 )
+texture = ExtResource( 20 )
+
+[node name="Surrender" type="TouchScreenButton" parent="WhiteFlag"]
+visible = false
+position = Vector2( -30, -100 )
+scale = Vector2( 4, 4 )
+shape = SubResource( 3 )
+
+[node name="SurrenderSprite" type="Sprite" parent="WhiteFlag"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 10, -60 )
+texture = ExtResource( 16 )
+
+[node name="SurrenderCooldown" type="Timer" parent="WhiteFlag"]
+wait_time = 2.5
+
+[node name="Graveyard" type="Control" parent="."]
+margin_left = 750.0
+margin_top = -135.0
+margin_right = 750.0
+margin_bottom = -135.0
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackgroundAnimations" parent="Graveyard" instance=ExtResource( 28 )]
+
+[node name="Sprite" type="Sprite" parent="Graveyard"]
+texture = ExtResource( 2 )
+
+[node name="ForegroundAnimations" parent="Graveyard" instance=ExtResource( 28 )]
+
+[node name="GraveButton" type="TouchScreenButton" parent="Graveyard"]
+position = Vector2( -137, -84 )
+scale = Vector2( 14, 9 )
+shape = SubResource( 4 )
+
+[node name="Tween" type="Tween" parent="Graveyard"]
+
+[node name="Deck" type="Control" parent="."]
+margin_left = 740.0
+margin_top = 150.0
+margin_right = 740.0
+margin_bottom = 150.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BottomSprite" type="Sprite" parent="Deck"]
+position = Vector2( 11, 0 )
+texture = ExtResource( 14 )
+
+[node name="BackgroundAnimations" parent="Deck" instance=ExtResource( 28 )]
+
+[node name="TopSprite" type="Sprite" parent="Deck"]
+texture = ExtResource( 10 )
+
+[node name="DrawButton" type="TouchScreenButton" parent="Deck/TopSprite"]
+position = Vector2( -80, -125 )
+scale = Vector2( 8, 12.5 )
+shape = SubResource( 5 )
+
+[node name="CountBacklight" type="Sprite" parent="Deck/TopSprite"]
+texture = ExtResource( 21 )
+
+[node name="TextBox" type="Control" parent="Deck/TopSprite"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="CardCount" type="Label" parent="Deck/TopSprite/TextBox"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -168.0
+margin_top = -124.0
+margin_right = 132.0
+margin_bottom = 83.0
+custom_fonts/font = ExtResource( 3 )
+text = "20"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="ForegroundAnimations" parent="Deck" instance=ExtResource( 28 )]
+
+[node name="Hand" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_top = 190.0
+margin_bottom = 190.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="Hand"]
+
+[node name="CardMover" parent="." instance=ExtResource( 4 )]
+
+[node name="CardHighLighter" parent="." instance=ExtResource( 8 )]
+margin_left = -760.0
+margin_top = -20.0
+margin_right = -760.0
+margin_bottom = -20.0
+
+[node name="Timers" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="PhaseChangeTimer" type="Timer" parent="Timers"]
+wait_time = 0.6
+
+[node name="WaitTimer" type="Timer" parent="Timers"]
+wait_time = 0.1
+
+[node name="AIRefreshTimer" type="Timer" parent="Timers"]
+
+[node name="SelectFadeTimer" type="Timer" parent="Timers"]
+wait_time = 1.6
+script = ExtResource( 27 )
+
+[connection signal="pressed" from="Field/UIButtons/PhaseButton/PhaseButton" to="." method="_on_PhaseButton_pressed"]
+[connection signal="timeout" from="Field/ZoneTargetingWait" to="Field" method="_on_ZoneTargetingWait_timeout"]
+[connection signal="timeout" from="LifeCounter/CountFrame" to="LifeCounter" method="_on_CountFrame_timeout"]
+[connection signal="pressed" from="WhiteFlag/WhiteFlag" to="." method="_on_WhiteFlag_pressed"]
+[connection signal="pressed" from="WhiteFlag/Surrender" to="." method="_on_Surrender_pressed"]
+[connection signal="timeout" from="WhiteFlag/SurrenderCooldown" to="." method="_on_SurrenderCooldown_timeout"]
+[connection signal="pressed" from="Graveyard/GraveButton" to="." method="_on_GraveButton_pressed"]
+[connection signal="pressed" from="Deck/TopSprite/DrawButton" to="." method="_on_DrawButton_pressed"]
+[connection signal="timeout" from="Timers/PhaseChangeTimer" to="." method="_on_PhaseChangeTimer_timeout"]
+[connection signal="timeout" from="Timers/WaitTimer" to="." method="_on_WaitTimer_timeout"]
+[connection signal="timeout" from="Timers/AIRefreshTimer" to="." method="_on_AIRefreshTimer_timeout"]
+[connection signal="timeout" from="Timers/SelectFadeTimer" to="Timers/SelectFadeTimer" method="_on_Attachments_Fade_Timer_timeout"]

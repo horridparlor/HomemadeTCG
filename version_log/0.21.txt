@@ -1,0 +1,571 @@
+Version 0.21
+
+#FIRST public version
+
+The game starts with 2 game modes: Roguelike & Sandbox. The game starts with 120 cards.
+
+The game starts with 2 game modes: Roguelike & Sandbox.
+
+The roguelike mode has 6 floors:
+
+Floor 1 (10 enemies):
+
+- Infantry
+- 4-Axis
+- Donut Shark
+- PC - Bug
+- Neko Sister
+- Thick Lassie
+- Steelen Monk
+- Supo Mobile
+- Vampire Boy
+- White Husk
+
+Floor 2 (10 enemies):
+
+- Apeshit
+- Hammagal
+- Bunny-Saurus
+- Flamenjoin
+- Hydra Spawn
+- Moderator
+- Mairiko-chan
+- Brazen Bulk
+- Skiier-Skippy
+- Wanderret
+
+Floor 3 (10 enemies):
+
+- Doyen Owl
+- Paramedic
+- Bricklayer
+- Bunny Champ
+- Mill Cabinet
+- Female Dile
+- Many the Cat
+- Shark Summoner
+- Ice Swimmer
+- Wanderrets
+
+Floor 4 (10 enemies):
+
+- Kamikaze
+- Caripean
+- Chaos Imp
+- Dark Cavalry
+- Deadly Mimic
+- Hivemind
+- Olympic Swimmer
+- 10 out of 10
+- Snow Orchid
+- Dung Miasma
+
+Floor 5 (10 enemies):
+
+- Gatling Baboon
+- Doom Hydra
+- God of Future
+- Absolution
+- God of Chaos
+- God of Death
+- God of Lies
+- Retribution
+- Alpha Flamenjoin
+- Miss Latosse
+
+Floor 6 (3 boss choices):
+
+- Donut King
+- The World
+- Deadly Twins
+
+The game starts with 120 cards:	
+
+- 2500 BC Invader
+[Field] Play-trigger effects cannot be activated.
+
+- Absolute Predator - Apeshit
+[Hand] If your opponent would mill, you mill that much instead. Then, discard this card.
+[Void + 2] Play an "Absolute Predator" from hand.
+
+- Absolute Predator - Curious Simp
+[Play] Search 1 "Absolute Predator" with a different name, but only once per turn.
+
+- Absolute Predator - Gatling Baboon
+[ContactFusion] Friend in the middle column + "Absolute Predator" in hand.
+[Play] Destroy all non-fusion cards in the same column, but only once per turn.
+[Once] Reverse any attack targeting this card.
+
+- Absolute Predator - Kamikaze
+[ContactFusion] Friend in the leftmost column + "Absolute Pedator" in hand.
+[Play] Destroy all fusion cards in the same column, but only once per turn.
+[Death] You can play an "Absolute Predator" from your deck this turn.
+
+- Absolute Predator - Paramedic
+[Hand] If you would run out of life, your life becomes 1 instead. Then, discard this card. Only once per turn.
+[Graveyard] If a fusion friend would die by attack, void this card instead, but only once per turn.
+
+- Absolute Predator - Simian Infantry
+[Graveyard] "Absolute Predator" friends gain 1 power.
+[Void + 2] Add this card to your hand. Only once per turn.
+
+- Absolute Predator - Submonkey
+[ContactFusion] Friend in the rightmost column + "Absolute Predator" in hand.
+[Play] Void target card in your opponent's graveyard, then this card's power becomes equal to 2 plus the number of cards with the same name as the voided card in your opponent's graveyard. Only once per turn.
+[Death] Mill cards equal to the number of cards sent to your graveyard this turn.
+
+- Angry Donut King
+[ContactFusion] 2 friends with different names.
+[Play] Destroy target enemy, but this card cannot attack this turn. Only once per game.
+
+- Apprentice Wizard
+[ContactFusion] 2 cards in hand, but only once per game.
+[Play] Destroy target non-fusion enemy, but this card cannot attack this turn.
+
+- Aqua Madonna
+[Draw] You can play an additional card this turn. Only once per turn.
+[Void + 3] Place this card on the top of your deck, then draw a card. Only once per turn.
+
+- Baby Shark - Caripean
+[Discard] You can play a "Baby Shark" with a different name from your deck this turn. Only once per turn.
+[Void + 2] Each "Shark" friend gains 2 power.
+
+- Baby Shark - Hammagal
+[Discard] The next card you play this turn gains 2 power.
+[Void + 2] Draw cards until you have 2 in hand. Only once per game.
+
+- Baby Shark - Savaguy
+[Discard] Destroy target non-fusion enemy. Only once per turn.
+[Void + 2] Void target non-fusion card in your opponent's graveyard, but only once per turn.
+
+- Baby Shark - Tripoli
+[Discard] Play a copy of this card. Only while there are 2 or more "Shark" friends, and only once per turn.
+[Void + 2] Search 2 copies of this card, but only once per turn.
+
+- Banlist Wheel
+[Field] If a card is sent to graveyard, void all cards in graveyards with the same name.
+
+- Beginner Milker
+[Play] Gain 3 life.
+[Death] Play an "Udder Dual-Wielder" from your graveyard to the same column.
+
+- Benevolent Archsaint
+[ContactFusion] Void a friend with a draw-trigger effect, but only once per game.
+[Once] This card cannot be destroyed by attack.
+[Graveyard] Start the game with this card on your middle column.
+
+- Bird-Love Sentiment
+[Play] Void target card in your opponent's graveyard.
+[Void + 4] Play a copy of the voided card.
+
+- Bricklayer
+[Play] You can play 2 "Bricks" from your deck this turn. Only once per turn.
+
+- Bricks
+[Discard] 
+[Detach] 
+[Void] 
+
+- Bunny Girl Champion
+[Field] This card's power is equal to half the number of cards with different names in your deck, rounded down.
+
+- Chairman Gong Fei
+[ContactFusion] 2 non-fusion friends.
+[Play] You can play an additional card this turn. Only once per turn.
+
+- Chaos Follower
+[Play] This card transforms into a random fusion, then copy its play-trigger effect.
+[Void + 3] Each card on the field transforms into a random card.
+
+- Chicka Prrrr
+[Discard] Your opponent mills 3 cards, but only once per turn.
+[Play] This card's power becomes equal to the number of cards sent to your opponent's graveyard this turn.
+
+- CNC Machine - 4-Axis
+[Hand] While there is a "CNC" friend with a different name, you can additionally play this card. Only once per turn.
+[Field] This card's power is equal to the number of "CNC Machine" in your graveyard.
+
+- CNC Machine - Mill Cabinet
+[Field] This card's power is equal to the number of "CNC Machine" in your graveyard.
+[Graveyard] At the end phase; void this card, then mill 2 cards.
+
+- CNC Machine - Steroid Lathe
+[Play] Mill 3 cards.
+[Field] This card's power is equal to the number of "CNC Machine" in your graveyard.
+
+- Dark Cavalry
+[ContactFusion] 2 cards in hand, but only once per game.
+[Field] This card can attack up to twice per turn.
+
+- Deadly Mimic
+[ContactFusion] Void a fusion friend, but only once per game.
+[Play] This card transforms into a random card in your deck.
+[Graveyard] Start the game with this card on your middle column.
+
+- Donut Shark
+[Discard] Search a "Baby Shark", but only once per turn.
+[Void + 2] Play a "Shark Summoner" from your graveyard.
+
+- Doom Hydra
+[ContactFusion] 2 cards with the same name in hand.
+[Play] Draw 2 cards, but only once per game.
+
+- Doyen Owl
+[Draw] Play this card to the leftmost free column, but only once per turn. If the game has not started, draw a card. 
+
+- Dragon God Mirai
+[ContactFusion] The next 2 cards your opponent plays, but only once per game.
+[Play] Your turn ends.
+
+- Dragon God of Absolution
+[ContactFusion] 2 friends that have been a full round on the field.
+[Play] Take an extra turn, but you can attack only once that turn. Only once per game.
+[Field] This card's power is equal to the number of full rounds the game has lasted.
+
+- Dragon God of Chaos
+[ContactFusion] Friend without a play-trigger effect. Only once per turn.
+[Play] This card transforms into a random card with a play-trigger effect, then copy its play-trigger effect.
+
+- Dragon God of Death
+[ContactFusion] Friend in the leftmost column + friend in the rightmost column.
+[Play] Play a card from your graveyard, but negate its play-trigger effects. Your turn ends. Only once per game.
+
+- Dragon God of Lies
+[ContactFusion] 2 transformed friends.
+[Play] Each card in your opponent's deck transforms into a random non-fusion card. Your turn ends. Only once per game.
+
+- Dragon God of Peace
+[ContactFusion] 2 friends that have not attacked this turn.
+[Play] During their next turn, your opponent can attack only twice. Your turn ends. Only once per game.
+
+- Dragon God of Retribution
+[ContactFusion] 2 enemies that have been a full round on the field, but only once per game.
+[Play] Your turn ends.
+
+- Elderly Neko-Slayer
+[ContactFusion] Attach 2 friends to this card, but only once per turn.
+[Field] This card can attack up to the number of times there are "Neko" on the field per turn.
+[Detach] Destroy target non-fusion enemy.
+
+- Elder Refrigerator
+[Discard] Void a "Refrigerator" from your graveyard, then return it to your graveyard. Only once per turn.
+[Detach] You lose 2 life, then play this card. Only once per turn.
+
+- Elder Sea Monstrosity
+[ContactFusion] 2 cards with a void-triggered effect on the top of your deck, but void this card when it leaves the field. Only once per turn.
+
+- Emerald Shogun
+[ContactFusion] Attach 2 friends to this card. Only once per turn.
+[Death] Return any cards attached to this card to your hand.
+
+- Engulfed Flamenjoin
+[Deck] While there is a "Flamenjoin" with a different name on the field, you can play this card from the top of your deck. Only once per turn.
+[Play] Target enemy transforms into "Flamenjoin". Only once per turn.
+
+- Eternal King
+[ContactFusion] Friend in the second column + friend in the fourth column.
+[Field] While in the middle column, this card cannot be attacked.
+[Once] If you would lose life, you gain twice that much life instead.
+
+- Extinction Hydra
+[ContactFusion] 3 cards with the same name in hand, but only once per game.
+[Death] Draw cards until you have 5 in hand.
+
+- False Hydra
+[ContactFusion] 2 cards with different names in hand, but only once per game.
+[Field] This card cannot be attacked.
+[Once] This card cannot be destroyed by card effect.
+
+- Flamenjoin
+[Deck] While there is a "Flamenjoin" on the field, you can play this card from the top of your deck.
+
+- Flamenjoin - Gargantua
+[Deck] While there is a "Flamenjoin" friend with a different name, you can play this card from the top of your deck. Only once per turn.
+[Play] The top card of your deck transforms into "Flamenjoin", but only once per turn.
+
+- Flamenjoin Ignited
+[ContactFusion] 2 friends with different names, but only once per turn.
+[Play] Search a "Flamenjoin", and place it on the top of your deck.
+[Field] This card's power is equal to the number of cards with the same name on the top of your deck.
+
+- Froggy-Venturer
+[Play] If this is your first card played this turn, play a copy of a random differently named card in your deck.
+[Field] This card's power is equal to 1 plus the number of tokens on the field.
+
+- Furry, Neko-Titan
+[ContactFusion] Return 2 non-fusion friends on the top of deck. Only once per turn.
+[Play] Draw a card. Then, this card's power becomes equal to the number of cards in your hand.
+[Detach] Destroy target fusion enemy, but only once per turn.
+
+- Greedy Hydra
+[ContactFusion] 2 cards with the same name in hand, but only once per game.
+[Play] Draw cards until you have 3 in hand.
+
+- Happy Little Mortgage Fund
+[ContactFusion] The next 3 cards you play, but only once per game.
+[Play] Draw cards until you have 5 in hand.
+
+- Hivemind
+[ContactFusion] Attach 2 "Invader" in your hand to this card, but only once per turn.
+[Field] This card's power is equal to twice the number of "Invader" on your field.
+[Once] Reverse any attack targeting this card during your opponent's turn.
+
+- Hollowed Wanderret
+[Play] Play a non-fusion "Wanderret" from your graveyard, but only once per turn.
+[Void] Mill 2 cards, but only once per turn.
+
+- Hukkakero - Vainamoinen Testing Grounds
+[Hand] You can attach this card to a friend. Only once per turn.
+[Detach] Destroy random enemy. Only while there are 3 or more enemies, and only once per turn. 
+
+- Hydra Spawn
+[Discard] Search 2 copies of this card. Only once per turn.
+
+- Invader - Bug in the Simulation
+[Field] Cards in graveyards cannot be voided.
+
+- Invader Scout
+[Hand] While only your opponent has any cards on the field, you can additionally play this card.
+[Play] Search an "Invader" with a different name. Only once per turn.
+
+- Invader Warlord
+[ContactFusion] Attach a non-fusion friend to this card, but only once per turn.
+[Field] This card's power is equal to the number of "Invader" on your field.
+
+- Isekai Summoning Ritual
+[Play] This card transforms into a random card with a death-trigger effect, then copy its play-trigger effect.
+
+- Little Miss Katarina
+[Hand] If your opponent would draw, you draw that many cards instead. Discard this card. Only once per turn.
+[Play] Your opponent realizes how pathetic they are.
+
+- Lividborn Tusker
+[Field] This card and the card its attached to can attack an additional time each turn.
+[Detach] Destroy target non-fusion enemy in the same column.
+
+- Lohjaburger Restaurant Manager
+[Hand] Reverse any attack targeting a non-fusion friend. Then, discard this card. Only once per turn.
+[Graveyard] At the end phase, if you played 5 or more cards this turn; add this card to your hand. Only once per turn.
+
+- Loose Pate
+[Field] The card this card is attached gains 1 power and can attack an additional time each turn.
+[Graveyard] If you play a "Hydra", attach this card to it. Void this card when it leaves the field. Only once per turn
+
+- Mercury Eagle
+[ContactFusion] 2 friends with a draw-trigger effect.
+[Play] Draw 2 cards, but only once per turn.
+[Field] This card's power is equal to the number of cards in your hand.
+
+- Meticulous Hummingbird
+[Draw] Play this card to the rightmost free column, but only once per turn. If the game has not started, this card's power becomes 3.
+
+- Mushy Funguy
+[Play] This card transforms into target enemy, and the enemy transforms into "Mushy Funguy".
+[Void + 6] You can play a card from your deck this turn.
+
+- Narwhal Battleship - Justisu
+[ContactFusion] 2 friends with a void-triggered effect, but only once per turn.
+[Play] Destroy target non-fusion enemy, and all other cards with the same name. This cards gains power equal to the number of cards destroyed.
+
+- Narwhal Battleship - Saiban
+[ContactFusion] 2 friends with a void-triggered effect, but add this card to your hand when it leaves the field. Only once per turn.
+[Discard] Search a card with a void-triggered effect. Only once per turn.
+[Play] This card transforms into a random card with a void-triggered effect in your graveyard, then copy its void-triggered effect.
+
+- Natsu, Toy Knight
+[Play] Gain 2 life. If you have less than ten life, play a copy of this card. Only once per turn.
+
+- Neko-Sister "Cherry Paws" Mairiko-chan
+[Draw] Play this card to the middle column. Only once per turn.
+[Field] While in the middle column, this card and the card its attached to gain 3 power.
+
+- Neko-Sister Midnight Nebula
+[Hand] While there is a "Neko-Sister" with a different name on your field, you can additionally play this card. Only once per turn.
+[Detach] Void target card in your opponent's graveyard.
+
+- Neko-Sister White Crescent
+[Draw] Play this card to the rightmost column. Only once per turn.
+[Detach] Play this card to the leftmost column, but only once per turn.
+
+- Nordic Moose Rider
+[Play] Attach target card in your graveyard to this card.
+[Field] This card and the card its attached to cannot have their attacks reversed.
+
+- Nuclear Fusion - Akilleon
+[ContactFusion] 2 fusion friends, but only once per game.
+[Play] You gain life equal to the highest power among enemies, then this card gains that much power.
+
+- Octopussy
+[ContactFusion] Void 2 cards in your graveyard, but only once per turn.
+[Play] This card becomes a random card with a void-triggered effect, then copy its play-trigger effect.
+
+- Olympic Swimmer
+[ContactFusion] Attach to this card; 2 "Refrigerator" sent to your graveyard this turn. Only once per turn.
+[Once] This card cannot be destroyed by attack. Detach all "Refrigerator" attached to this card to restore this effect.
+
+- Onlymaids - Blackjack
+[Play] Search a "Onlymaids" card with a different name, but only once per turn.
+[Field] Your opponent has to pay 1 life to attack a friend.
+
+- Onlymaids - Cat Mother
+[Hand] While you have an "Onlymaids" friend with a different name, you can additionally play this card. Only once per turn.
+[Field] Your opponent has to pay 2 life to attack this card.
+
+- Onlymaids - Refinia
+[Field] Your opponent has to pay 1 life to attack this card.
+[Death] Your opponent can attack only once more this turn.
+
+- Onlymaids - Single Mom
+[Hand] While you have no friends, you can additionally play this card. Only once per turn.
+[Field] Your opponent has to pay 3 life to attack this card.
+
+- Onlymaids - Thick Lassie
+[Field] Your opponent has to pay 1 life to attack this card.
+[Graveyard] At the end phase; play this card to the middle column, but void it when it leaves the field.
+
+- Possessive Invader
+[Hand] You can attach this card to an enemy. Only once per turn.
+[Field] The enemy this card is attached to; has no effects and cannot attack.
+
+- Refrigerator Coffin
+[Discard] Search a "Refrigerator" with a different name, and send it to your graveyard. Only once per turn.
+[Detach] Destroy target non-fusion enemy, but only once per turn.
+
+- Refrigerator Monk
+[Discard] Mill a card.
+[Detach] Target enemy transforms into "Refrigerator Monk", but only once per turn.
+
+- Royal Court Order
+[ContactFusion] 2 cards in hand, but only once per turn.
+[Play] Your opponent gains 2 life, but they lose 4 life when they realize how pathetic they are.
+
+- Runaway Dio
+[Play] Your opponent loses half of their life, rounded up. Then, this card gains that much power. Only once per game.
+
+- Sealed Wrath
+[ContactFusion] Void the top 6 cards of your deck. Only once per game.
+[Play] This card's power becomes equal to the number of full rounds the game has lasted.
+
+- Secrecy of the Vainamoinen Project
+[Hand] You can attach this card to a card on the field. Only once per turn.
+[Field] The enemy this card is attached has no effects.
+[Detach] Draw 2 cards. Only while this card is attached to a "Vaakkumanner" friend, and only once per turn.
+
+- Shark Summoner
+[ContactFusion] 2 friends with a discard-triggered effect.
+[Play] Search a "Shark", and play it. It gains 2 power. Only once per turn.
+
+- Silja Vaakkumanner
+[Graveyard] If a "Vainamoinen" friend dies; play this card to the same column, and attach the killed friend to this card. Only once per turn.
+
+- Skiing Hercules
+[ContactFusion] 2 friends with power related to the number of cards sent to the graveyard.
+[Play] Your opponent mills 3 cards, then destroy all enemies with the same name as a card sent to your opponent's graveyard this turn. Only once per turn.
+[Field] This card's power is equal to the number of cards sent to your opponent's graveyard this turn.
+
+- Skiing Mantis - Budwing Hunk
+[Play] Your opponent mills 2 cards, then void 2 non-fusion cards in their graveyard. Only once per turn.
+[Field] This card's power is equal to the number of cards sent to your opponent's graveyard this turn.
+
+- Skiing Mantis - Devil's Peak
+[Play] Search a "Skiing Mantis" with a different name, and send it to your graveyard. You can play a "Skiing Mantis" from your graveyard this turn. Only once per turn.
+[Field] This card's power is equal to the number of cards sent to your opponent's graveyard this turn.
+
+- Skiing Mantis - Hypothermia Thistle
+[Field] This card's power is equal to the number of cards sent to your opponent's graveyard this turn.
+[Graveyard] If a "Skiing" friend dies, play this card to the same column. Only once per turn.
+
+- Skiing Mantis - Snow Orchid
+[Field] This card's power is equal to the number of cards sent to your opponent's graveyard this turn.
+[Graveyard] If you play a "Skiing" friend, play this card to the middle column. Only once per turn.
+
+- Skull Wyvern
+[ContactFusion] Attach to this card; 2 cards sent to your graveyard this turn, but only once per game.
+[Detach] Mill 2 cards.
+
+- Slenderret
+[ContactFusion] Attach to this card; 3 "Wanderret" send to your graveyard this turn. Only once per turn.
+[Play] This card's name becomes "Wanderret of Death". All enemies transform into "Wanderret".
+
+- Sober Neko-Brother
+[Play] Place a "Neko-Sister" from your graveyard on the top of your deck, then draw a card. Only once per turn.
+[Detach] Gain 2 life.
+
+- Space-Time Distortion
+[Draw] Each card in your opponent's deck transforms into a random card in their deck.
+
+- Splatter Daemon
+[ContactFusion] Restore the next 2 cards you play. Only once per game.
+[Detach] Send the next card your opponent plays to the graveyard, but only once per game.
+
+- Star-Shaped Crabster
+[Discard] Draw a card, but only once per turn.
+
+- Swimming With Refrigerators
+[ContactFusion] Attach to this card; 2 "Refrigerator" sent to your graveyard this turn, but only once per turn.
+[Detach] Search a "Refrigerator", but only once per turn.
+
+- The World
+[ContactFusion] 2 friends with different names.
+[Play] Attach your deck to this card, then shuffle all non-fusion cards in your graveyard into a new deck. Only once per game.
+[Field] This card's power is equal to the number of cards attached to it.
+
+- Tiananmen School Bus
+[ContactFusion] 2 cards in hand, but only once per turn.
+[Once] Reverse any attack targeting this card.
+
+- Twin-Maids of Death
+[ContactFusion] 2 "Onlymaids" friends, but only once per turn.
+[Field] Your opponent has to pay 3 life to attack this card.
+[Once] This card cannot be destroyed by attack.
+
+- Udder Dual-Wielder
+[ContactFusion] 2 friends.
+[Play] Gain 6 life, but only once per game.
+
+- Unripe Asparagus
+[Death] Each fusion enemy transforms into a random non-fusion.
+
+- Unripe Mystery Pumpkin
+[ContactFusion] Void 2 non-fusion "Unripe" cards in your graveyard. Only once per turn.
+[Field] This card's power is equal to half the number of cards sent to your graveyard this turn, rounded down.
+[Death] Add this card to your hand. It becomes a random card with a hand-active effect.
+
+- Unripe Okra
+[Discard] This card becomes a random fusion. Only once per turn.
+[Death] The top 2 cards of your opponent's deck become "Unripe Okra".
+
+- Vainamoinen - I
+[Hand] You can attach this card to a friend. Only once per turn.
+[Detach] Void target fusion card in your opponent's graveyard. Only once per turn.
+
+- Vainamoinen - II
+[ContactFusion] Friend with 2 or more cards attached to it.
+[Play] Destroy all cards in the same column.
+[Field] The card this card is attached to gains 2 power.
+
+- Wanderret
+[Hand] While there is a "Wanderret" on the field, you can additionally play this card.
+[Void + 2] Search a "Wanderret", but only once per turn.
+
+- Wanderret - Blue Flame
+[Hand] While there is a "Wanderret" with a different name on your field, you can additionally play this card. Only once per turn.
+[Play] Your opponent loses life equal to the number of "Wanderret" on the field.
+[Void + 1] Your opponent loses 2 life, but only once per turn.
+
+- Wanderret - Dung Miasma
+[ContactFusion] Attach 2 non-fusion friends to this card. Only once per turn.
+[Play] Play a "Wanderret" token.
+[Field] This card's power is equal to the  number of "Wanderret" on your field.
+
+- Wanderret Infestation
+[ContactFusion] 2 friends with different names.
+[Play] Search a "Wanderret", and send it to your graveyard. Only once per turn.
+[Field] This card's power is equal to the number of "Wanderret" on the field.
+
+- Wanderret - White Husk
+[Deck] While there is a "Wanderret" friend with a different name, you can play this card. Only once per turn.
+[Void + 3] Destroy target enemy.
+
+
+Eero Laine ─ Horrid Parlor

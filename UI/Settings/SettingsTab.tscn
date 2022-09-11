@@ -1,0 +1,156 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://UI/Settings/CheckBoxes.gd" type="Script" id=1]
+[ext_resource path="res://UI/Settings/SettingsTab.gd" type="Script" id=2]
+[ext_resource path="res://UI/Settings/Sliders.gd" type="Script" id=3]
+[ext_resource path="res://UI/Settings/CheckBox.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Textures/UI/Settings/SettingsTabCompressed.png" type="Texture" id=5]
+[ext_resource path="res://UI/Settings/SettingsSlider.tscn" type="PackedScene" id=6]
+[ext_resource path="res://UI/Settings/GameModeButton.gd" type="Script" id=7]
+[ext_resource path="res://Textures/UI/Settings/GameModeSpriteSandboxCompressed.png" type="Texture" id=8]
+[ext_resource path="res://Textures/UI/Settings/GameModeSpriteRoguelikeCompressed.png" type="Texture" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+[node name="SettingsTab" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -960.0
+margin_top = -540.0
+margin_right = -960.0
+margin_bottom = -540.0
+script = ExtResource( 2 )
+
+[node name="SettingsMenu" type="Control" parent="."]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Control" parent="SettingsMenu"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackgroundSprite" type="ColorRect" parent="SettingsMenu/Background"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -300.0
+margin_right = 200.0
+margin_bottom = 300.0
+color = Color( 0.560784, 0.560784, 0.560784, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabSprite" type="Sprite" parent="SettingsMenu/Background"]
+position = Vector2( -120, 260 )
+texture = ExtResource( 5 )
+
+[node name="SettingsContainer" type="VBoxContainer" parent="SettingsMenu"]
+margin_left = -150.0
+margin_top = -225.0
+margin_right = 150.0
+margin_bottom = 300.0
+custom_constants/separation = 60
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sliders" type="VBoxContainer" parent="SettingsMenu/SettingsContainer"]
+margin_right = 300.0
+margin_bottom = 92.0
+custom_constants/separation = 60
+script = ExtResource( 3 )
+
+[node name="GameSpeed" parent="SettingsMenu/SettingsContainer/Sliders" instance=ExtResource( 6 )]
+min_value = 0.0
+max_value = 80.0
+
+[node name="MasterVolume" parent="SettingsMenu/SettingsContainer/Sliders" instance=ExtResource( 6 )]
+margin_top = 76.0
+margin_bottom = 92.0
+
+[node name="CheckBoxes" type="VBoxContainer" parent="SettingsMenu/SettingsContainer"]
+margin_top = 152.0
+margin_right = 300.0
+margin_bottom = 392.0
+custom_constants/separation = 60
+script = ExtResource( 1 )
+
+[node name="DisplaySpin" parent="SettingsMenu/SettingsContainer/CheckBoxes" instance=ExtResource( 4 )]
+margin_right = 300.0
+
+[node name="ToggleAI" parent="SettingsMenu/SettingsContainer/CheckBoxes" instance=ExtResource( 4 )]
+margin_top = 60.0
+margin_right = 300.0
+margin_bottom = 60.0
+
+[node name="AutoPlay" parent="SettingsMenu/SettingsContainer/CheckBoxes" instance=ExtResource( 4 )]
+margin_top = 120.0
+margin_right = 300.0
+margin_bottom = 120.0
+
+[node name="AutoConfirm" parent="SettingsMenu/SettingsContainer/CheckBoxes" instance=ExtResource( 4 )]
+margin_top = 180.0
+margin_right = 300.0
+margin_bottom = 180.0
+
+[node name="Quit" parent="SettingsMenu/SettingsContainer/CheckBoxes" instance=ExtResource( 4 )]
+margin_top = 240.0
+margin_right = 300.0
+margin_bottom = 240.0
+
+[node name="GameModeButton" type="Control" parent="SettingsMenu"]
+margin_left = 120.0
+margin_top = 260.0
+margin_right = 120.0
+margin_bottom = 260.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RoguelikeSprite" type="Sprite" parent="SettingsMenu/GameModeButton"]
+visible = false
+texture = ExtResource( 9 )
+
+[node name="SandboxSprite" type="Sprite" parent="SettingsMenu/GameModeButton"]
+visible = false
+texture = ExtResource( 8 )
+
+[node name="ChangeGameMode" type="TouchScreenButton" parent="SettingsMenu/GameModeButton"]
+position = Vector2( -80, -40 )
+scale = Vector2( 8, 4 )
+shape = SubResource( 1 )
+
+[node name="TabButton" type="Control" parent="."]
+margin_left = -120.0
+margin_top = 260.0
+margin_right = -120.0
+margin_bottom = 260.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabShadow" type="Sprite" parent="TabButton"]
+modulate = Color( 1, 1, 1, 0.156863 )
+texture = ExtResource( 5 )
+
+[node name="OpenSettings" type="TouchScreenButton" parent="TabButton"]
+position = Vector2( -80, -40 )
+scale = Vector2( 8, 4 )
+shape = SubResource( 2 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="value_changed" from="SettingsMenu/SettingsContainer/Sliders/GameSpeed" to="SettingsMenu/SettingsContainer/Sliders" method="_on_GameSpeed_value_changed"]
+[connection signal="value_changed" from="SettingsMenu/SettingsContainer/Sliders/MasterVolume" to="SettingsMenu/SettingsContainer/Sliders" method="_on_MasterVolume_value_changed"]
+[connection signal="pressed" from="SettingsMenu/GameModeButton/ChangeGameMode" to="SettingsMenu/GameModeButton" method="_on_ChangeGameMode_pressed"]
+[connection signal="pressed" from="TabButton/OpenSettings" to="." method="_on_OpenSettings_pressed"]

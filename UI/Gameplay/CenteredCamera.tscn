@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Camera2D
+
+onready var rotation_frame = $RotationFrame
+
+const degrees_by_rotation_frame : int = 5
+var degrees : int = 0
+
+func film_player(player_number : int):
+	if OS.get_name() == \"Android\":
+		return
+	degrees = 0
+	if player_number == 2:
+		degrees = 180
+	rotation_frame.start()
+
+func _on_RotationFrame_timeout():
+	print(rotation_degrees)
+	if int(rotation_degrees) != degrees:
+		rotation_degrees += degrees_by_rotation_frame
+		if rotation_degrees >= 360:
+			rotation_degrees = 0
+		return
+	rotation_frame.stop()
+"
+
+[node name="CenteredCamera" type="Camera2D"]
+script = SubResource( 1 )

@@ -1,0 +1,97 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/Gameplay.gd" type="Script" id=1]
+[ext_resource path="res://UI/Gameplay/Playmat.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Textures/UI/Gameplay/GameplayBackgroundSand.png" type="Texture" id=3]
+[ext_resource path="res://Textures/Audio/StaticWorld.ogg" type="AudioStream" id=4]
+[ext_resource path="res://UI/Gameplay/CenteredCamera.tscn" type="PackedScene" id=5]
+[ext_resource path="res://UI/Gameplay/TaskBanner.tscn" type="PackedScene" id=6]
+[ext_resource path="res://UI/Gameplay/RotationFrame.tscn" type="PackedScene" id=7]
+
+[node name="Gameplay" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Background" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Sprite" parent="Background"]
+texture = ExtResource( 3 )
+
+[node name="CenteredCamera" parent="Background" instance=ExtResource( 5 )]
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="Background"]
+stream = ExtResource( 4 )
+
+[node name="GameArea" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Players" type="Control" parent="GameArea"]
+margin_top = 270.0
+margin_bottom = 270.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Playmat1" parent="GameArea/Players" instance=ExtResource( 2 )]
+
+[node name="Playmat2" parent="GameArea/Players" instance=ExtResource( 2 )]
+position = Vector2( 0, -540 )
+rotation = 3.14159
+
+[node name="Cards" type="Control" parent="GameArea"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player1Cards" type="YSort" parent="GameArea/Cards"]
+position = Vector2( 0, 270 )
+
+[node name="Player2Cards" type="YSort" parent="GameArea/Cards"]
+position = Vector2( 0, -270 )
+rotation = -3.14159
+
+[node name="Taskbanners" type="Control" parent="GameArea"]
+margin_top = -270.0
+margin_bottom = -270.0
+rect_rotation = -180.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TaskBanner1" parent="GameArea/Taskbanners" instance=ExtResource( 6 )]
+margin_top = -760.0
+margin_bottom = -760.0
+rect_rotation = 180.0
+
+[node name="TaskBanner2" parent="GameArea/Taskbanners" instance=ExtResource( 6 )]
+margin_top = 220.0
+margin_bottom = 220.0
+
+[node name="Timers" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartGameTimer" type="Timer" parent="Timers"]
+wait_time = 0.3
+
+[node name="EndingCooldown" type="Timer" parent="Timers"]
+wait_time = 2.0
+
+[node name="RotationFrame" parent="Timers" instance=ExtResource( 7 )]
+
+[connection signal="timeout" from="Timers/StartGameTimer" to="." method="_on_StartGameTimer_timeout"]
+[connection signal="timeout" from="Timers/EndingCooldown" to="." method="_on_EndingCooldown_timeout"]
+[connection signal="timeout" from="Timers/RotationFrame" to="." method="_on_RotationFrame_timeout"]

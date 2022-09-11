@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Fonts/SilverLesserCounter.tres" type="DynamicFont" id=1]
+[ext_resource path="res://UI/Gameplay/TaskBanner.gd" type="Script" id=2]
+[ext_resource path="res://Textures/UI/Gameplay/TaskBannerCompressed.png" type="Texture" id=3]
+
+[node name="TaskBanner" type="Control"]
+modulate = Color( 1, 1, 1, 0 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+
+[node name="TextBox" type="Control" parent="."]
+margin_left = 3.0
+margin_right = 3.0
+
+[node name="TaskMessage" type="Label" parent="TextBox"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -650.0
+margin_top = -115.0
+margin_right = 650.0
+margin_bottom = 92.0
+custom_fonts/font = ExtResource( 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]

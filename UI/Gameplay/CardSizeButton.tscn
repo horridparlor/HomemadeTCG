@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI/Gameplay/CardSizeButton.gd" type="Script" id=1]
+
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="CardSizeButton" type="TouchScreenButton"]
+position = Vector2( -90, -140 )
+scale = Vector2( 9, 14 )
+shape = SubResource( 1 )
+script = ExtResource( 1 )

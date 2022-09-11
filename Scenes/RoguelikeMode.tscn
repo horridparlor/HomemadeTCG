@@ -1,0 +1,107 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Scenes/RoguelikeMode.gd" type="Script" id=1]
+[ext_resource path="res://Textures/UI/Roguelike/Background/Forest.png" type="Texture" id=2]
+[ext_resource path="res://UI/Gameplay/CardHighlighter.tscn" type="PackedScene" id=3]
+[ext_resource path="res://UI/Gameplay/CenteredCamera.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Textures/Audio/SainKuollaSamallaMaalla.ogg" type="AudioStream" id=5]
+[ext_resource path="res://UI/Roguelike/StatusMenu.tscn" type="PackedScene" id=6]
+[ext_resource path="res://UI/Gameplay/CardMover.tscn" type="PackedScene" id=7]
+[ext_resource path="res://UI/Gameplay/TaskBanner.tscn" type="PackedScene" id=8]
+[ext_resource path="res://UI/Roguelike/EventWindow.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Textures/UI/Roguelike/DiscordLinkCompressed.png" type="Texture" id=10]
+[ext_resource path="res://UI/Roguelike/DiscordLink.gd" type="Script" id=11]
+[ext_resource path="res://Animations/Animations.tscn" type="PackedScene" id=12]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="RoguelikeMode" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Background" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Background" type="Sprite" parent="Background"]
+position = Vector2( 0, -810 )
+texture = ExtResource( 2 )
+
+[node name="CenteredCamera" parent="Background" instance=ExtResource( 4 )]
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="Background"]
+stream = ExtResource( 5 )
+
+[node name="EventWindow" parent="." instance=ExtResource( 9 )]
+
+[node name="Animations" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CardMover" parent="Animations" instance=ExtResource( 7 )]
+margin_left = -20.0
+margin_top = -20.0
+margin_right = -20.0
+margin_bottom = -20.0
+
+[node name="Cards" type="Control" parent="Animations"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UI" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CardHighlighter" parent="UI" instance=ExtResource( 3 )]
+margin_left = -760.0
+margin_top = 240.0
+margin_right = -760.0
+margin_bottom = 240.0
+
+[node name="StatusMenu" parent="UI" instance=ExtResource( 6 )]
+margin_left = 720.0
+margin_top = 420.0
+margin_right = 720.0
+margin_bottom = 420.0
+
+[node name="DiscordLink" type="Control" parent="UI"]
+margin_left = -460.0
+margin_top = 430.0
+margin_right = -460.0
+margin_bottom = 430.0
+script = ExtResource( 11 )
+
+[node name="Animations" parent="UI/DiscordLink" instance=ExtResource( 12 )]
+
+[node name="Sprite" type="Sprite" parent="UI/DiscordLink"]
+texture = ExtResource( 10 )
+
+[node name="Button" type="TouchScreenButton" parent="UI/DiscordLink"]
+position = Vector2( -90, -90 )
+scale = Vector2( 9.1, 9 )
+shape = SubResource( 1 )
+
+[node name="TaskBanner" parent="UI" instance=ExtResource( 8 )]
+margin_top = 480.0
+margin_bottom = 480.0
+
+[node name="Timers" type="Control" parent="."]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CloseTimer" type="Timer" parent="Timers"]
+wait_time = 0.12
+
+[node name="TaskPileRefreshTimer" type="Timer" parent="Timers"]
+wait_time = 0.01
+
+[connection signal="pressed" from="UI/DiscordLink/Button" to="UI/DiscordLink" method="_on_Button_pressed"]
+[connection signal="timeout" from="Timers/CloseTimer" to="." method="_on_CloseTimer_timeout"]
+[connection signal="timeout" from="Timers/TaskPileRefreshTimer" to="." method="_on_TaskPileRefreshTimer_timeout"]

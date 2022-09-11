@@ -1,0 +1,20 @@
+Version 0.23
+
+#New cards, bug fixes.
+
+Card fixes (3):
+
+-Fixed 'Neko-Sister "Cherry Paws" Mairiko-Chan' getting power boost while not in the right column.
+
+-Fixed 'Eternal King' not triggering while other Once-value card on its left side.
+
+-Fixed 'Absolute Predator - Paramedic' skipping the damage animation, when setting your life to 1.
+
+New cards (2):
+
+-Piston Sticker,
+[Once] If you would lose life, each player's life becomes 1 instead.
+
+-Wiener Monster,
+[ContactFusion] 2 friends.
+[Field] This card can attack up to the number of times there are fusion friends.

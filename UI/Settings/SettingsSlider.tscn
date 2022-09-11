@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/Settings/SettingsSlider.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/SilverCheckBox.tres" type="DynamicFont" id=2]
+
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 5
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 2
+border_color = Color( 0, 0.305882, 0.709804, 1 )
+corner_radius_top_left = 60
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 75
+expand_margin_top = 15.0
+expand_margin_bottom = 15.0
+
+[node name="SettingsSlider" type="HSlider"]
+margin_right = 300.0
+margin_bottom = 16.0
+custom_styles/slider = SubResource( 1 )
+min_value = -30.0
+max_value = 0.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="Label" parent="."]
+anchor_left = 0.233333
+anchor_top = -3.125
+anchor_right = 0.796667
+anchor_bottom = 0.25
+margin_left = 30.0
+margin_top = -5.0
+margin_right = 30.0
+margin_bottom = -5.0
+custom_fonts/font = ExtResource( 2 )
+text = "Enable Description"
+__meta__ = {
+"_edit_use_anchors_": true
+}

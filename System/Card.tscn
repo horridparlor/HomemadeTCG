@@ -1,0 +1,161 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://System/Card.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/SilverLesserCounter.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Textures/CardCompressed/CardBackCompressed.png" type="Texture" id=3]
+[ext_resource path="res://Textures/UI/Gameplay/CancelButtonCompressed.png" type="Texture" id=4]
+[ext_resource path="res://Textures/UI/DeckBuilder/CardCounterBacklightCompressed.png" type="Texture" id=5]
+[ext_resource path="res://Textures/UI/Gameplay/ConfirmButtonCompressed.png" type="Texture" id=6]
+[ext_resource path="res://Textures/UI/Gameplay/ConfirmButtonHighlight.png" type="Texture" id=7]
+[ext_resource path="res://UI/Gameplay/CardSizeButton.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Animations/Animations.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Fonts/SilverCardCounter.tres" type="DynamicFont" id=10]
+[ext_resource path="res://Textures/UI/Gameplay/PermanentCountCompressed.png" type="Texture" id=11]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="Card" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Visuals" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Animations" parent="Visuals" instance=ExtResource( 9 )]
+
+[node name="Overlay" type="Sprite" parent="Visuals"]
+texture = ExtResource( 3 )
+
+[node name="CardSizeButton" parent="." instance=ExtResource( 8 )]
+
+[node name="HighlightSizeButton" parent="." instance=ExtResource( 8 )]
+position = Vector2( -180, -280 )
+scale = Vector2( 18, 28 )
+
+[node name="Buttons" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConfirmButton" type="Control" parent="Buttons"]
+margin_top = 60.0
+margin_bottom = 60.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConfirmButton" type="TouchScreenButton" parent="Buttons/ConfirmButton"]
+visible = false
+position = Vector2( -80, -60 )
+scale = Vector2( 8, 6 )
+shape = SubResource( 1 )
+
+[node name="ConfirmSprite" type="Sprite" parent="Buttons/ConfirmButton"]
+modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 6 )
+
+[node name="ConfirmButtonHighlight" type="Control" parent="Buttons"]
+margin_top = 120.0
+margin_bottom = 120.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConfirmButton" type="TouchScreenButton" parent="Buttons/ConfirmButtonHighlight"]
+visible = false
+position = Vector2( -160, -120 )
+scale = Vector2( 16, 12 )
+shape = SubResource( 1 )
+
+[node name="ConfirmSprite" type="Sprite" parent="Buttons/ConfirmButtonHighlight"]
+modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 7 )
+
+[node name="CancelButton" type="Control" parent="Buttons"]
+margin_top = 60.0
+margin_bottom = 60.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CancelButton" type="TouchScreenButton" parent="Buttons/CancelButton"]
+visible = false
+position = Vector2( -80, -60 )
+scale = Vector2( 8, 6 )
+shape = SubResource( 1 )
+
+[node name="CancelSprite" type="Sprite" parent="Buttons/CancelButton"]
+modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 4 )
+
+[node name="PowerCounter" type="Control" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 75.0
+margin_bottom = 75.0
+
+[node name="Sprite" type="Sprite" parent="PowerCounter"]
+texture = ExtResource( 5 )
+
+[node name="PowerCount" type="Label" parent="PowerCounter"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -70.0
+margin_top = -80.0
+margin_right = 70.0
+margin_bottom = 63.0
+custom_fonts/font = ExtResource( 2 )
+text = "3"
+align = 1
+valign = 1
+
+[node name="PermanentCounter" type="Control" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 65.0
+margin_top = 115.0
+margin_right = 65.0
+margin_bottom = 115.0
+
+[node name="Sprite" type="Sprite" parent="PermanentCounter"]
+texture = ExtResource( 11 )
+
+[node name="Count" type="Label" parent="PermanentCounter"]
+margin_left = -20.0
+margin_top = -82.0
+margin_right = 27.0
+margin_bottom = 61.0
+custom_fonts/font = ExtResource( 10 )
+text = "12"
+align = 1
+valign = 1
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PowerUpdateFrame" type="Timer" parent="Control"]
+wait_time = 0.04
+
+[node name="RotationFrame" type="Timer" parent="Control"]
+wait_time = 0.02
+
+[connection signal="pressed" from="CardSizeButton" to="." method="_on_CardSizeButton_pressed"]
+[connection signal="released" from="CardSizeButton" to="." method="_on_CardSizeButton_released"]
+[connection signal="pressed" from="HighlightSizeButton" to="." method="_on_HighlightSizeButton_pressed"]
+[connection signal="released" from="HighlightSizeButton" to="." method="_on_HighlightSizeButton_released"]
+[connection signal="pressed" from="Buttons/ConfirmButton/ConfirmButton" to="." method="_on_ConfirmButton_pressed"]
+[connection signal="pressed" from="Buttons/ConfirmButtonHighlight/ConfirmButton" to="." method="_on_ConfirmButton_pressed"]
+[connection signal="pressed" from="Buttons/CancelButton/CancelButton" to="." method="_on_CancelButton_pressed"]
+[connection signal="timeout" from="Control/PowerUpdateFrame" to="." method="_on_PowerUpdateFrame_timeout"]
+[connection signal="timeout" from="Control/RotationFrame" to="." method="_on_RotationFrame_timeout"]

@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://UI/Gameplay/CardHighlighter.gd" type="Script" id=2]
+[ext_resource path="res://UI/Settings/SettingsTab.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Textures/CardHighlight/CardBackHighlight.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="CardHighlighter" type="Control"]
+script = ExtResource( 2 )
+
+[node name="HighlightSprite" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 400, 600 )
+
+[node name="SettingsTab" parent="." instance=ExtResource( 3 )]
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 0.0
+margin_bottom = 0.0
+
+[node name="HighlighterButton" type="TouchScreenButton" parent="."]
+position = Vector2( -185, -285 )
+scale = Vector2( 18.5, 28.5 )
+shape = SubResource( 1 )
+
+[node name="ClearHighlighTimeout" type="Timer" parent="."]
+wait_time = 0.01
+
+[connection signal="pressed" from="HighlighterButton" to="." method="_on_HighlighterButton_pressed"]
+[connection signal="released" from="HighlighterButton" to="." method="_on_HighlighterButton_released"]
+[connection signal="timeout" from="ClearHighlighTimeout" to="." method="_on_ClearHighlighTimeout_timeout"]

@@ -1,0 +1,97 @@
+Version 0.22
+
+#Gameplay improvements, bug fixes.
+
+Bugs fixes:
+
+- Fixed a bug where the game would crash if you tried to play "False Hydra", while having only a single copy of a card A and multiple copies of card B, in your hand; then choosing one of the B as the first target. (The auto-picker tried to filter the remaining card choice via the card object, not card name as it is supposed; and the game would crash.)
+
+- Fixed bug where the AI would freeze if you had "Invader - Big in the Simulation" and AI couldn't activate their void-triggered effects. (Now AI knows they cannot void cards.)
+
+Gameplay improvements:
+
+- Main deck size reduced from 60 to 40. (The games end faster, you have more managable amount of cards added to your deck each floor.)
+
+- When playing against the Roguelike AI; life count, decksize and taskbanner for the enemy have their text boxes flipped for easier read. (Display flip is now disabled on the game mode.)
+
+- When starting a game with an empty decklist, the game generates you one using 3 random secret packs. (This makes it faster to test Sandbox mode, as you don't immediately have to build 2 decks.)
+
+- Added visual assets for the roguelike event window.
+
+- Added Discord link to the roguelike menu. (If it appears too annoying, may have to move it. Trying to make demo-testers permanent players.)
+
+Logic errors fixed:
+
+- Fixed cards that search other copies of themselves. (In the previous, version these effects would allow to search any card instead.)
+
+- Fixed effects that need a card with a different name to exist. (In the previous version, these effects would allow cards with
+the same name also.)
+
+- Card powers will now always be updated after 1 or more cards change zones. Previously only when zone change was related to Hand, Field, or Graveyard. (Previously you could use "Nordis Moose Rider" to attach a "Vainamoinen - II that increases power while attached, and the power would only be updated after taking another action.)
+
+- Cards in the graveyard that activate after a friend with a specific name dies; now check the name of the card when its on the field, not after its already sent to grave. (Previously if you transformed an enemy "Skiing Hercules", it would not prevent their "Skiing Mantis - Hypothermia Thistle" from triggering, as the Hercules would transform back upon being sent to grave.)
+
+- Now attacks can be reversed on cards that cannot otherways be attacked. (Previously, if "False Hydra" attacked enemy "Gatling Baboon"; Baboons attack-reversal would be depleted, and cause Hydra could not be targeted for attack, the reversal became a direct attack. "Cannot be attacked" wad not meant to counter attack-reversal.)
+
+Enemy-AI improvements:
+
+- AI now activates effects that increase the power of next card played this turn, only if the AI plans to play a card afterwards. (Before AI could discard all copies of "Baby Shark - Hammagal" in their hand, and pass.)
+
+- AI will not anymore attack opponent's "Onlymaids" cards, when they have not enough life to pay the attacking tax. (Previously the AI would just kill themselves attacking.)
+
+- AI doesn't anymore check all cards in the deck for free plays during each loop. (Prevents lag.)
+
+Changed cards (5):
+
+- Baby Shark Tripoli
+The void-triggered effect is now once-per-game, instead of once-per-turn. (The effect is not be used multiple times. Too much synergy with Hydras, more than within the Shark archetype.)
+
+- Dragon God Mirai
+The card can now only be played if you have not played more than 2 cards during the same turn. (Mirai has been the most broken fusion, and this change hopefully lessens the card's combo potential.)
+
+- Flamenjoin - Gargantua
+The play-trigger effect changed from once-per-turn, to only trigger if the card is the first one played during the turn. (Previously the card was the best generic combo-starter.) 
+
+- Runaway Dio
+Restriction for the card's play-trigger effect changed from "once-per-game" to only resolve if Dio your fifth card played the turn. (Previously Dio could win the game by itself. This change was made to make you unable to sweep early game floors with the card, also makes "Dragon God of Chaos" less high-rolly.)
+
+- Wanderret Blue Flame
+The Play-trigger effect is now once-per-turn -restricted. (Previously you could combo-kill your opponent during the first turn.)
+
+New cards (3):
+
+- Buddy Dragon
+[Deck] This card is always shuffled on the top.
+[Draw] This card permanently gains 2 power.
+[Void] Shuffle this card into the deck.
+
+- Hydra Monger
+[ContactFusion] 2 cards with the same name in hand.
+[Play] Search a card of 3 random choices, but only once per game.
+
+- Lax Stump
+[Field] The card this card is attached gains 1 power and cannot have its attacks reversed.
+[Graveyard] : "If you play a Hydra, attach this card to it. Void this card when it leaves the field. Only once per turn.
+
+Changed enemies (6):
+
+- Hydra Spawn (Floor 2):
+The "LittleMissKatarina" is replaced with the new "Lax Stump".
+
+- Doyen Owl (Floor 3):
+The "LittleMissKatarina" is replaced with the new "Buddy Dragon".
+
+- Dark Cavalry (Floor 4):
+The enemy no longer uses "Doom Hydra" or "Onlymaids Refinia". The cards have been replaced with the new "Hydra Monger", and "Lax Stump".
+
+- Absolution (Floor 5):
+The "Doom Hydra" is replaced with the new "Hydra Monger".
+
+- God of Chaos (Floor 5):
+The "ChickaPrrrr" is replaced with the new "Buddy Dragon".
+
+- Donut King (Floor 6):
+The "Runaway Dio" is replaced with the new "Buddy Dragon".
+
+
+Eero Laine ─ Horrid Parlor

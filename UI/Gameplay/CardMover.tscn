@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/Gameplay/CardMover.gd" type="Script" id=1]
+[ext_resource path="res://Textures/UI/Gameplay/RevealArrowCompressed.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="CardMover" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CardMoveFrame" type="Timer" parent="."]
+wait_time = 0.02
+
+[node name="RevealButtons" type="Control" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 780.0
+margin_top = -140.0
+margin_right = 820.0
+margin_bottom = -100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Reveal_Up" type="TouchScreenButton" parent="RevealButtons"]
+position = Vector2( -270, -110 )
+scale = Vector2( 5, 10 )
+shape = SubResource( 1 )
+
+[node name="ArrowUpSprite" type="Sprite" parent="RevealButtons"]
+position = Vector2( -210, -10 )
+texture = ExtResource( 2 )
+
+[node name="Reveal_Down" type="TouchScreenButton" parent="RevealButtons"]
+position = Vector2( -270, 200 )
+scale = Vector2( 5, 10 )
+shape = SubResource( 1 )
+
+[node name="ArrowDownSprite" type="Sprite" parent="RevealButtons"]
+position = Vector2( -220, 300 )
+rotation = 3.14159
+texture = ExtResource( 2 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="timeout" from="CardMoveFrame" to="." method="_on_CardMoveFrame_timeout"]
+[connection signal="pressed" from="RevealButtons/Reveal_Up" to="." method="_on_Reveal_Up_pressed"]
+[connection signal="pressed" from="RevealButtons/Reveal_Down" to="." method="_on_Reveal_Down_pressed"]

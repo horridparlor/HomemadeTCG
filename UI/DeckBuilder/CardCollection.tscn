@@ -1,0 +1,523 @@
+[gd_scene load_steps=40 format=2]
+
+[ext_resource path="res://UI/DeckBuilder/CardCollection.gd" type="Script" id=1]
+[ext_resource path="res://UI/DeckBuilder/SearchResult.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Textures/UI/DeckBuilder/ConfirmDeckCompressed.png" type="Texture" id=3]
+[ext_resource path="res://Fonts/SilverLesserCounter.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Textures/UI/DeckBuilder/DeckCountBacklight.png" type="Texture" id=5]
+[ext_resource path="res://Textures/UI/DeckBuilder/DeckSlot1Focused.png" type="Texture" id=6]
+[ext_resource path="res://Textures/UI/DeckBuilder/CopyMinusOneCompressed.png" type="Texture" id=7]
+[ext_resource path="res://Textures/UI/DeckBuilder/DeckSlot2Unfocused.png" type="Texture" id=8]
+[ext_resource path="res://Textures/UI/DeckBuilder/DeckSlot3Unfocused.png" type="Texture" id=9]
+[ext_resource path="res://Textures/UI/DeckBuilder/DeckSlot2Focused.png" type="Texture" id=10]
+[ext_resource path="res://Textures/UI/DeckBuilder/DeckSlot3Focused.png" type="Texture" id=11]
+[ext_resource path="res://Textures/UI/DeckBuilder/CopyToZeroCompressed.png" type="Texture" id=12]
+[ext_resource path="res://Textures/UI/DeckBuilder/CopyPlusOneCompressed.png" type="Texture" id=13]
+[ext_resource path="res://UI/DeckBuilder/Slots.gd" type="Script" id=14]
+[ext_resource path="res://UI/DeckBuilder/HighlightWindow.gd" type="Script" id=15]
+[ext_resource path="res://UI/DeckBuilder/ControlPanel.gd" type="Script" id=16]
+[ext_resource path="res://Textures/UI/DeckBuilder/DeckSlot1Unfocused.png" type="Texture" id=17]
+[ext_resource path="res://Textures/UI/DeckBuilder/CopyCounterBacklightCompressed.png" type="Texture" id=18]
+[ext_resource path="res://Fonts/SilverMinimizedCounter.tres" type="DynamicFont" id=19]
+[ext_resource path="res://Textures/UI/DeckBuilder/MenuFilterAllCompressed.png" type="Texture" id=20]
+[ext_resource path="res://Textures/UI/DeckBuilder/DeckSlot4Unfocused.png" type="Texture" id=21]
+[ext_resource path="res://Textures/UI/DeckBuilder/DeckSlot4Focused.png" type="Texture" id=22]
+[ext_resource path="res://Textures/UI/DeckBuilder/ConfirmedDeckCompressed.png" type="Texture" id=23]
+[ext_resource path="res://Textures/UI/DeckBuilder/CardSearchDownCompressed.png" type="Texture" id=24]
+[ext_resource path="res://Textures/UI/DeckBuilder/CopyMinusThreeCompressed.png" type="Texture" id=25]
+[ext_resource path="res://Textures/UI/DeckBuilder/DeckSlotsBackPanelCompressed.png" type="Texture" id=26]
+[ext_resource path="res://Textures/UI/DeckBuilder/CopyPlusThreeCompressed.png" type="Texture" id=27]
+[ext_resource path="res://Textures/UI/DeckBuilder/MainCountBacklightCompressed.png" type="Texture" id=28]
+[ext_resource path="res://Textures/UI/DeckBuilder/CardSearchUpCompressed.png" type="Texture" id=29]
+[ext_resource path="res://Textures/UI/DeckBuilder/GraveCountBacklightCompressed.png" type="Texture" id=30]
+[ext_resource path="res://Textures/UI/DeckBuilder/MenuFilterMainCompressed.png" type="Texture" id=31]
+[ext_resource path="res://Textures/UI/DeckBuilder/MenuFilterDeckCompressed.png" type="Texture" id=32]
+[ext_resource path="res://Textures/UI/DeckBuilder/MenuFilterGraveCompressed.png" type="Texture" id=33]
+[ext_resource path="res://UI/Gameplay/CardHighlighter.tscn" type="PackedScene" id=34]
+[ext_resource path="res://Textures/UI/DeckBuilder/EmptyDeckCompressed.png" type="Texture" id=36]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+[sub_resource type="RectangleShape2D" id=3]
+
+[sub_resource type="RectangleShape2D" id=4]
+
+[node name="CardCollection" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="CardSlots" type="Control" parent="."]
+margin_top = -120.0
+margin_bottom = -120.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Row1" type="Control" parent="CardSlots"]
+margin_top = 60.0
+margin_bottom = 60.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SearchResult1" parent="CardSlots/Row1" instance=ExtResource( 2 )]
+position = Vector2( -465, 0 )
+
+[node name="SearchResult2" parent="CardSlots/Row1" instance=ExtResource( 2 )]
+position = Vector2( -310, 0 )
+
+[node name="SearchResult3" parent="CardSlots/Row1" instance=ExtResource( 2 )]
+position = Vector2( -155, 0 )
+
+[node name="SearchResult4" parent="CardSlots/Row1" instance=ExtResource( 2 )]
+
+[node name="SearchResult5" parent="CardSlots/Row1" instance=ExtResource( 2 )]
+position = Vector2( 155, 0 )
+
+[node name="SearchResult6" parent="CardSlots/Row1" instance=ExtResource( 2 )]
+position = Vector2( 310, 0 )
+
+[node name="SearchResult7" parent="CardSlots/Row1" instance=ExtResource( 2 )]
+position = Vector2( 465, 0 )
+
+[node name="Row2" type="Control" parent="CardSlots"]
+margin_top = 275.0
+margin_bottom = 275.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SearchResult8" parent="CardSlots/Row2" instance=ExtResource( 2 )]
+position = Vector2( -465, 0 )
+
+[node name="SearchResult9" parent="CardSlots/Row2" instance=ExtResource( 2 )]
+position = Vector2( -310, 0 )
+
+[node name="SearchResult10" parent="CardSlots/Row2" instance=ExtResource( 2 )]
+position = Vector2( -155, 0 )
+
+[node name="SearchResult11" parent="CardSlots/Row2" instance=ExtResource( 2 )]
+
+[node name="SearchResult12" parent="CardSlots/Row2" instance=ExtResource( 2 )]
+position = Vector2( 155, 0 )
+
+[node name="SearchResult13" parent="CardSlots/Row2" instance=ExtResource( 2 )]
+position = Vector2( 310, 0 )
+
+[node name="SearchResult14" parent="CardSlots/Row2" instance=ExtResource( 2 )]
+position = Vector2( 465, 0 )
+
+[node name="ControlPanel" type="Control" parent="."]
+margin_left = 750.0
+margin_right = 750.0
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Arrows" type="Control" parent="ControlPanel"]
+margin_left = -130.0
+margin_right = -130.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SearchPileUP" type="TouchScreenButton" parent="ControlPanel/Arrows"]
+position = Vector2( -70, 20 )
+scale = Vector2( 7, 6 )
+shape = SubResource( 1 )
+
+[node name="UpArrow" type="Sprite" parent="ControlPanel/Arrows"]
+position = Vector2( 0, 80 )
+texture = ExtResource( 29 )
+
+[node name="SearchPileDown" type="TouchScreenButton" parent="ControlPanel/Arrows"]
+position = Vector2( -70, 145 )
+scale = Vector2( 7, 6 )
+shape = SubResource( 1 )
+
+[node name="DownArrow" type="Sprite" parent="ControlPanel/Arrows"]
+position = Vector2( 0, 205 )
+rotation = 3.14159
+texture = ExtResource( 24 )
+
+[node name="CardCounts" type="Control" parent="ControlPanel"]
+margin_left = -4.0
+margin_right = -4.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainBacklight" type="Sprite" parent="ControlPanel/CardCounts"]
+position = Vector2( 0, 73 )
+texture = ExtResource( 28 )
+
+[node name="Backlight" type="Sprite" parent="ControlPanel/CardCounts/MainBacklight"]
+position = Vector2( 9, 3 )
+texture = ExtResource( 5 )
+
+[node name="MainCount" type="Label" parent="ControlPanel/CardCounts/MainBacklight"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -96.5
+margin_top = -153.0
+margin_right = -12.5
+margin_bottom = -10.0
+custom_fonts/font = ExtResource( 4 )
+text = "40"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Grave_Backlight" type="Sprite" parent="ControlPanel/CardCounts"]
+position = Vector2( 0, 215 )
+texture = ExtResource( 30 )
+
+[node name="Backlight" type="Sprite" parent="ControlPanel/CardCounts/Grave_Backlight"]
+position = Vector2( 7, 2 )
+texture = ExtResource( 5 )
+
+[node name="GraveCount" type="Label" parent="ControlPanel/CardCounts/Grave_Backlight"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -92.0
+margin_top = -150.0
+margin_right = -8.0
+margin_bottom = -7.0
+custom_fonts/font = ExtResource( 4 )
+text = "20"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Switches" type="Control" parent="ControlPanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 260.0
+margin_right = 260.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuSwitch" type="TouchScreenButton" parent="ControlPanel/Switches"]
+position = Vector2( -200, 20 )
+scale = Vector2( 7, 6 )
+shape = SubResource( 1 )
+
+[node name="MenuAllSprite" type="Sprite" parent="ControlPanel/Switches"]
+visible = false
+position = Vector2( -130, 80 )
+texture = ExtResource( 20 )
+
+[node name="MenuMainSprite" type="Sprite" parent="ControlPanel/Switches"]
+visible = false
+position = Vector2( -130, 80 )
+texture = ExtResource( 31 )
+
+[node name="MenuGraveSprite" type="Sprite" parent="ControlPanel/Switches"]
+visible = false
+position = Vector2( -130, 80 )
+texture = ExtResource( 33 )
+
+[node name="MenuDeckSprite" type="Sprite" parent="ControlPanel/Switches"]
+visible = false
+position = Vector2( -130, 80 )
+texture = ExtResource( 32 )
+
+[node name="ConfirmSwitch" type="TouchScreenButton" parent="ControlPanel/Switches"]
+position = Vector2( -200, 145 )
+scale = Vector2( 7, 6 )
+shape = SubResource( 1 )
+
+[node name="ConfirmSprite" type="Sprite" parent="ControlPanel/Switches"]
+position = Vector2( -130, 205 )
+texture = ExtResource( 3 )
+
+[node name="ConfirmedSprite" type="Sprite" parent="ControlPanel/Switches"]
+visible = false
+position = Vector2( -130, 205 )
+texture = ExtResource( 23 )
+
+[node name="DeckSlots" type="Control" parent="."]
+margin_left = -280.0
+margin_top = -290.0
+margin_right = -280.0
+margin_bottom = -290.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SearchBar" type="Control" parent="DeckSlots"]
+margin_left = -250.0
+margin_right = -250.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="DeckSlots/SearchBar"]
+margin_top = 85.0
+margin_right = 500.0
+margin_bottom = 120.0
+max_length = 60
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackPanel" type="Control" parent="DeckSlots"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelSprite" type="Sprite" parent="DeckSlots/BackPanel"]
+texture = ExtResource( 26 )
+
+[node name="Slots" type="Control" parent="DeckSlots"]
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot4" type="Control" parent="DeckSlots/Slots"]
+margin_left = 187.25
+margin_right = 187.25
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DeckSlot4" type="TouchScreenButton" parent="DeckSlots/Slots/Slot4"]
+position = Vector2( -63, -65 )
+scale = Vector2( 6.25, 6.5 )
+shape = SubResource( 2 )
+
+[node name="UnfocusSprite" type="Sprite" parent="DeckSlots/Slots/Slot4"]
+position = Vector2( -0.5, 0 )
+texture = ExtResource( 21 )
+
+[node name="FocusSprite" type="Sprite" parent="DeckSlots/Slots/Slot4"]
+visible = false
+position = Vector2( -0.5, 0 )
+texture = ExtResource( 22 )
+
+[node name="Slot3" type="Control" parent="DeckSlots/Slots"]
+margin_left = 62.0
+margin_right = 62.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DeckSlot3" type="TouchScreenButton" parent="DeckSlots/Slots/Slot3"]
+position = Vector2( -63, -65 )
+scale = Vector2( 6.25, 6.5 )
+shape = SubResource( 2 )
+
+[node name="UnfocusSprite" type="Sprite" parent="DeckSlots/Slots/Slot3"]
+position = Vector2( -0.5, 0 )
+texture = ExtResource( 9 )
+
+[node name="FocusSprite" type="Sprite" parent="DeckSlots/Slots/Slot3"]
+visible = false
+position = Vector2( -0.5, 0 )
+texture = ExtResource( 11 )
+
+[node name="Slot2" type="Control" parent="DeckSlots/Slots"]
+margin_left = -62.5
+margin_right = -62.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DeckSlot2" type="TouchScreenButton" parent="DeckSlots/Slots/Slot2"]
+position = Vector2( -63, -65 )
+scale = Vector2( 6.25, 6.5 )
+shape = SubResource( 2 )
+
+[node name="UnfocusSprite" type="Sprite" parent="DeckSlots/Slots/Slot2"]
+position = Vector2( -0.5, 0 )
+texture = ExtResource( 8 )
+
+[node name="FocusSprite" type="Sprite" parent="DeckSlots/Slots/Slot2"]
+visible = false
+position = Vector2( -0.5, 0 )
+texture = ExtResource( 10 )
+
+[node name="Slot1" type="Control" parent="DeckSlots/Slots"]
+margin_left = -187.5
+margin_right = -187.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DeckSlot1" type="TouchScreenButton" parent="DeckSlots/Slots/Slot1"]
+position = Vector2( -63, -65 )
+scale = Vector2( 6.25, 6.5 )
+shape = SubResource( 2 )
+
+[node name="UnfocusSprite" type="Sprite" parent="DeckSlots/Slots/Slot1"]
+position = Vector2( -0.5, 0 )
+texture = ExtResource( 17 )
+
+[node name="FocusSprite" type="Sprite" parent="DeckSlots/Slots/Slot1"]
+visible = false
+position = Vector2( -0.5, 0 )
+texture = ExtResource( 6 )
+
+[node name="EmptySlot" type="Control" parent="DeckSlots/Slots"]
+margin_top = 120.0
+margin_bottom = 120.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EmptyDeck" type="TouchScreenButton" parent="DeckSlots/Slots/EmptySlot"]
+visible = false
+position = Vector2( -45, -40 )
+scale = Vector2( 4.5, 4 )
+shape = SubResource( 3 )
+
+[node name="EmptySprite" type="Sprite" parent="DeckSlots/Slots/EmptySlot"]
+modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 36 )
+
+[node name="EmptyingDeckTimer" type="Timer" parent="DeckSlots/Slots/EmptySlot"]
+wait_time = 0.01
+
+[node name="Tween" type="Tween" parent="DeckSlots/Slots"]
+
+[node name="HighlightWindow" type="Control" parent="."]
+margin_left = -760.0
+margin_top = -240.0
+margin_right = -760.0
+margin_bottom = -240.0
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UI" type="Control" parent="HighlightWindow"]
+margin_left = 10.0
+margin_top = 290.0
+margin_right = 10.0
+margin_bottom = 290.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="By1" type="Control" parent="HighlightWindow/UI"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DecreaseBy1" type="TouchScreenButton" parent="HighlightWindow/UI/By1"]
+position = Vector2( -200, 15 )
+scale = Vector2( 7, 5 )
+shape = SubResource( 1 )
+
+[node name="Decrease1Sprite" type="Sprite" parent="HighlightWindow/UI/By1"]
+position = Vector2( -129, 65 )
+texture = ExtResource( 7 )
+
+[node name="IncreaseBy1" type="TouchScreenButton" parent="HighlightWindow/UI/By1"]
+position = Vector2( 60, 15 )
+scale = Vector2( 7, 5 )
+shape = SubResource( 1 )
+
+[node name="Increase1Sprite" type="Sprite" parent="HighlightWindow/UI/By1"]
+position = Vector2( 130, 65 )
+texture = ExtResource( 13 )
+
+[node name="By10" type="Control" parent="HighlightWindow/UI"]
+margin_top = 100.0
+margin_bottom = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DecreaseBy10" type="TouchScreenButton" parent="HighlightWindow/UI/By10"]
+position = Vector2( -190, 30 )
+scale = Vector2( 6, 4 )
+shape = SubResource( 1 )
+
+[node name="Deacrease10Sprite" type="Sprite" parent="HighlightWindow/UI/By10"]
+position = Vector2( -130, 68 )
+texture = ExtResource( 25 )
+
+[node name="IncreaseBy10" type="TouchScreenButton" parent="HighlightWindow/UI/By10"]
+position = Vector2( 70, 30 )
+scale = Vector2( 6, 4 )
+shape = SubResource( 1 )
+
+[node name="Increase10Sprite" type="Sprite" parent="HighlightWindow/UI/By10"]
+position = Vector2( 130, 70 )
+texture = ExtResource( 27 )
+
+[node name="Reset" type="Control" parent="HighlightWindow/UI"]
+margin_top = 170.0
+margin_bottom = 170.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ToZero" type="TouchScreenButton" parent="HighlightWindow/UI/Reset"]
+position = Vector2( -45, -40 )
+scale = Vector2( 4.5, 4 )
+shape = SubResource( 4 )
+
+[node name="ZeroSprite" type="Sprite" parent="HighlightWindow/UI/Reset"]
+texture = ExtResource( 12 )
+
+[node name="CopyCount" type="Control" parent="HighlightWindow/UI"]
+margin_top = 65.0
+margin_bottom = 65.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Backlight" type="Sprite" parent="HighlightWindow/UI/CopyCount"]
+texture = ExtResource( 18 )
+
+[node name="Count" type="Label" parent="HighlightWindow/UI/CopyCount"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -82.0
+margin_top = -151.0
+margin_right = 86.0
+margin_bottom = 138.0
+custom_fonts/font = ExtResource( 19 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CardHighlighter" parent="HighlightWindow" instance=ExtResource( 34 )]
+
+[connection signal="pressed" from="ControlPanel/Arrows/SearchPileUP" to="." method="_on_SearchPileUP_pressed"]
+[connection signal="pressed" from="ControlPanel/Arrows/SearchPileDown" to="." method="_on_SearchPileDown_pressed"]
+[connection signal="pressed" from="ControlPanel/Switches/MenuSwitch" to="." method="_on_MenuSwitch_pressed"]
+[connection signal="pressed" from="ControlPanel/Switches/ConfirmSwitch" to="." method="_on_ConfirmSwitch_pressed"]
+[connection signal="mouse_entered" from="DeckSlots/SearchBar/LineEdit" to="." method="_on_LineEdit_mouse_entered"]
+[connection signal="mouse_exited" from="DeckSlots/SearchBar/LineEdit" to="." method="_on_LineEdit_mouse_exited"]
+[connection signal="text_changed" from="DeckSlots/SearchBar/LineEdit" to="." method="_on_LineEdit_text_changed"]
+[connection signal="pressed" from="DeckSlots/Slots/Slot4/DeckSlot4" to="DeckSlots/Slots" method="_on_DeckSlot4_pressed"]
+[connection signal="pressed" from="DeckSlots/Slots/Slot3/DeckSlot3" to="DeckSlots/Slots" method="_on_DeckSlot3_pressed"]
+[connection signal="pressed" from="DeckSlots/Slots/Slot2/DeckSlot2" to="DeckSlots/Slots" method="_on_DeckSlot2_pressed"]
+[connection signal="pressed" from="DeckSlots/Slots/Slot1/DeckSlot1" to="DeckSlots/Slots" method="_on_DeckSlot1_pressed"]
+[connection signal="pressed" from="DeckSlots/Slots/EmptySlot/EmptyDeck" to="DeckSlots/Slots" method="_on_EmptyDeck_pressed"]
+[connection signal="timeout" from="DeckSlots/Slots/EmptySlot/EmptyingDeckTimer" to="DeckSlots/Slots" method="_on_EmptyingDeckTimer_timeout"]
+[connection signal="pressed" from="HighlightWindow/UI/By1/DecreaseBy1" to="." method="_on_DecreaseBy1_pressed"]
+[connection signal="pressed" from="HighlightWindow/UI/By1/IncreaseBy1" to="." method="_on_IncreaseBy1_pressed"]
+[connection signal="pressed" from="HighlightWindow/UI/By10/DecreaseBy10" to="." method="_on_DecreaseBy10_pressed"]
+[connection signal="pressed" from="HighlightWindow/UI/By10/IncreaseBy10" to="." method="_on_IncreaseBy10_pressed"]
+[connection signal="pressed" from="HighlightWindow/UI/Reset/ToZero" to="." method="_on_ToZero_pressed"]
